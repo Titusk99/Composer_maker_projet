@@ -1,20 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello LegalController!{% endblock %}
+{% block title %}Mentions Légales{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<h1>Mentions Légales</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<p>Bienvenue sur la page des mentions légales. Vous pouvez consulter les différentes informations légales ci-dessous :</p>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/xampp/htdocs/Composer_maker/src/Controller/LegalController.php</code></li>
-        <li>Your template at <code>C:/xampp/htdocs/Composer_maker/templates/legal/index.html.twig</code></li>
-    </ul>
-</div>
+<ul>
+    <li><a href="{{ path('app_legal_cgu') }}">CGU</a></li>
+    <li><a href="{{ path('app_legal_cgv') }}">CGV</a></li>
+    <li><a href="{{ path('app_legal_privacy') }}">Politique de confidentialité</a></li>
+    <li><a href="{{ path('app_legal_about') }}">Qui sommes-nous ?</a></li>
+</ul>
 {% endblock %}
