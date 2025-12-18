@@ -38,7 +38,7 @@
                 <li><a href="{{ path('app_accueil') }}">Accueil</a></li>
                 
                 {% if app.user %}
-                    <li><a href="{{ path('app_game_index') }}">Mes Jeux</a></li>
+                    <li><a href="{{ path('app_game_index') }}">Les Jeux</a></li>
                     <li><a href="{{ path('app_game_new') }}">Ajouter un jeu</a></li>
                     <li><a href="{{ path('app_profile') }}">Mon Profil</a></li>
                     <li><a href="{{ path('app_logout') }}">Déconnexion ({{ app.user.userIdentifier }})</a></li>
