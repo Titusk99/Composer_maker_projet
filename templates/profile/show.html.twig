@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Profil{% endblock %}
+
+{% block body %}
+<h1>Mon Profil</h1>
+
+{% for message in app.flashes('success') %}
+    <div>{{ message }}</div>
+{% endfor %}
+
+<h2>Informations personnelles</h2>
+<p><strong>Nom :</strong> {{ user.nom }}</p>
+<p><strong>Email :</strong> {{ user.email }}</p>
+
+<a href="{{ path('app_profile_edit') }}">Modifier mon profil</a>
+
+<h3>Supprimer mon compte</h3>
+
+<form method="post" action="{{ path('app_profile_delete') }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+    <button type="submit">Supprimer définitivement mon compte</button>
+</form>
+{% endblock %}
