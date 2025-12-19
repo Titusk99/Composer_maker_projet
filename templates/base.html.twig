@@ -39,7 +39,9 @@
                 
                 {% if app.user %}
                     <li><a href="{{ path('app_game_index') }}">Les Jeux</a></li>
-                    <li><a href="{{ path('app_game_new') }}">Ajouter un jeu</a></li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li><a href="{{ path('app_game_new') }}">Ajouter un jeu</a></li>
+                    {% endif %}
                     <li><a href="{{ path('app_profile') }}">Mon Profil</a></li>
                     <li><a href="{{ path('app_logout') }}">Déconnexion ({{ app.user.userIdentifier }})</a></li>
                 {% else %}
