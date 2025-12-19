@@ -6,24 +6,37 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         {% block stylesheets %}
         <style>
+            nav {
+                background-color: white;
+                padding: 1rem;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+            
             nav ul {
                 list-style-type: none;
-                margin: 0;
-                padding: 0;
                 display: flex;
-                gap: 20px;
+                gap: 1rem;
+                align-items: center;
+                flex-wrap: wrap;
             }
+            
             nav ul li {
                 display: inline;
             }
-            footer {
-                margin-top: 50px;
-                padding: 20px 0;
-                border-top: 1px solid #ccc;
-                text-align: center;
+            
+            main {
+                max-width: 1460px;
+                margin: 0 auto;
+                padding: 0.5rem;
             }
-            footer a {
-                margin: 0 15px;
+            
+            footer {
+                background-color: white;
+                margin-top: 2rem;
+                padding: 1rem;
+                text-align: center;
             }
         </style>
         {% endblock %}
@@ -51,9 +64,9 @@
             </ul>
         </nav>
         
-        <hr>
-        
-        {% block body %}{% endblock %}
+        <main>
+            {% block body %}{% endblock %}
+        </main>
         
         <footer>
             <a href="{{ path('app_contact') }}">Contact</a>
