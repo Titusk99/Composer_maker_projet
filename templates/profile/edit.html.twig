@@ -18,13 +18,15 @@
         {{ form_errors(profileForm.email) }}
     </div>
 
-    <div>
-        {{ form_label(profileForm.plainPassword) }}
-        {{ form_widget(profileForm.plainPassword) }}
-        {{ form_errors(profileForm.plainPassword) }}
-    </div>
-
     <button type="submit">Enregistrer les modifications</button>
     <a href="{{ path('app_profile') }}">Annuler</a>
 {{ form_end(profileForm) }}
+
+<hr>
+
+<p>
+    <strong>Mot de passe :</strong> 
+    Pour changer votre mot de passe, <a href="{{ path('app_forgot_password_request') }}">cliquez ici</a>. 
+    Un email vous sera envoyé pour confirmer la modification.
+</p>
 {% endblock %}

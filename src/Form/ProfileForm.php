@@ -37,19 +37,6 @@ class ProfileForm extends AbstractType
                     ]),
                 ],
             ])
-            ->add('plainPassword', PasswordType::class, [
-                'label' => 'Nouveau mot de passe (laisser vide pour ne pas changer)',
-                'mapped' => false,
-                'required' => false,
-                'attr' => ['autocomplete' => 'new-password'],
-                'constraints' => [
-                    new Length(
-                        min: 6,
-                        minMessage: 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
-                        max: 4096
-                    ),
-                ],
-            ])
         ;
     }
 
